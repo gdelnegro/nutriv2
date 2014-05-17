@@ -10,16 +10,23 @@ class Default_BlogController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $dbNoticias = new Admin_Model_DbTable_Artigo();
-        $noticias = $dbNoticias->pesquisarArtigo(null);        
+        $blog = new Admin_Model_Blog();        
+        $noticias = $blog->pesquisaPost(null, null);
+        $noticiasRecentes = $blog->pesquisaPost(null, null, 2);
         $this->view->materias = $noticias;
+        $this->view->materiasRecentes = $noticiasRecentes;
     }
     
     public function showAction(){
         $id = $this->_getParam('id');
-        $dbNoticias = new Admin_Model_DbTable_Artigo();
-        $noticias = $dbNoticias->pesquisarArtigo($id);        
+        $blog = new Admin_Model_Blog();        
+        $noticias = $blog->pesquisaPost($id, null);   
+        $imagem = new Admin_Model_Imagem();
+        $dadosImagem = $imagem->pesquisaImagem($noticias['thumb']);
+        $noticiasRecentes = $blog->pesquisaPost(null, null, 3);
+        $this->view->imagem = $dadosImagem;
         $this->view->materias = $noticias;
+        $this->view->materiasRecentes = $noticiasRecentes;
     }
 
 }

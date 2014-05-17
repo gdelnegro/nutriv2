@@ -52,7 +52,13 @@ class Admin_Model_Blog
         }
     }
     
-    public function pesquisaPost($idPost = null, $autor = null){
+    /**
+     * @author Gustavo Del Negro <gustavodelnegro@gmail.com>
+     * @param int $idPost
+     * @param int $autor
+     * @return array
+     */
+    public function pesquisaPost($idPost = null, $autor = null, $limit = null){
         try{
             $select = $this->dbMaterias->select();
             $select->from('materias');
@@ -60,6 +66,10 @@ class Admin_Model_Blog
                 $select->where('idMateria = ?',$idPost);
             }if(!is_null($autor)){
                 $select->where('autor = ?', $autor);
+            }
+            $select->order('dtInclusao');
+            if(!is_null($limit) && $limit>1){
+                $select->limit($limit);
             }
             $stmt = $select->query();
             $dados = $stmt->fetchAll();
@@ -70,8 +80,7 @@ class Admin_Model_Blog
             }
         } catch (Exception $ex) {
             die(var_dump($ex->getMessage()));
-        }
-        
+        }  
     }
 }
 

@@ -49,6 +49,31 @@ class Admin_Model_Imagem
             die(var_dump($ex->getMessage()));
         }
     }
+    
+    /**
+     * @author Gustavo Del Negro <gustavodelnegro@gmail.com>
+     * @param int $idImagem
+     * @return array
+     */
+    public function pesquisaImagem($idImagem = null){
+        try{
+            $select = $this->dbImagem->select();
+            $select->from('imagens');
+            if(!is_null($idImagem)){
+                $select->where('idImagens = ?',$idImagem);
+            }
+            $stmt = $select->query();
+            $dados = $stmt->fetchAll();
+            if($idImagem != null){
+                return $dados[0];
+            }else{
+                return $dados;
+            }
+        } catch (Exception $ex) {
+            die(var_dump($ex->getMessage()));
+        }
+        
+    }
 
 }
 
