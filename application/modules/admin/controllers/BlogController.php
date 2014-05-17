@@ -51,7 +51,7 @@ class Admin_BlogController extends Zend_Controller_Action
                 $dadosImagem =array(
                     'descricao'  =>   'Logotipo'.$this->_getParam('sponsor'),
                     'nome'      =>  'materia-'.$titulo.'.'.$extension,
-                    'local'     =>  '../public/images/materias/',
+                    'local'     =>  '/images/materias/',
                     'categoria' => '2'
                 );
                 $modeloImagem = new Admin_Model_Imagem();
