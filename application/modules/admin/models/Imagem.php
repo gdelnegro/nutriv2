@@ -17,7 +17,7 @@ class Admin_Model_Imagem
      */
     public function insert(array $dados){
         try{
-            $this->dbImagem->insert($dados);
+            return $this->dbImagem->insert($dados);
         } catch (Exception $ex) {
             die(var_dump($ex->getMessage()));
         }

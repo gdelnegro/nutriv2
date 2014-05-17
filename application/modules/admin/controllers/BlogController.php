@@ -55,7 +55,7 @@ class Admin_BlogController extends Zend_Controller_Action
                     'categoria' => '2'
                 );
                 $modeloImagem = new Admin_Model_Imagem();
-                $idImagem = $modeloImagem->insert($dadosImagem);
+                die(var_dump($idImagem = $modeloImagem->insert($dadosImagem)));
                 $dados['titulo'] = $data['titulo'];
                 $dados['descricao'] = $data['descricao'];
                 $dados['texto'] = $data['texto'];

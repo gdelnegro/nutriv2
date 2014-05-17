@@ -67,7 +67,7 @@ class Admin_Model_Blog
             }if(!is_null($autor)){
                 $select->where('autor = ?', $autor);
             }
-            $select->order('dtInclusao');
+            $select->order('dtInclusao DESC');
             if(!is_null($limit) && $limit>1){
                 $select->limit($limit);
             }

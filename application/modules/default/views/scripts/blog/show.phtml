@@ -30,7 +30,9 @@ $modeloImagem = new Admin_Model_Imagem();
       <?php 
         foreach($this->materiasRecentes as $indice => $materia):
             if($materia['idMateria'] != $this->materias['idMateria']):
-                $dadosImagem = $modeloImagem->pesquisaImagem($materia['thumb']);
+                if(!is_null($materia['thumb'])){
+                        $dadosImagem = $modeloImagem->pesquisaImagem($materia['thumb']);
+                }
             ?>
                 <div class="post">
                     <div class="l_blox">

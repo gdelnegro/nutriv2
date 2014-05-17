@@ -21,9 +21,13 @@ $modeloImagem = new Admin_Model_Imagem();
           ?>
                 <div class="blog">
                     <?php
+                    if(!is_null($materia['thumb'])){
                         $dadosImagem = $modeloImagem->pesquisaImagem($materia['thumb']);
+                        echo '<img src="'.$dadosImagem['local'].$dadosImagem['nome'].'" alt="'.$materia['titulo'].'" class="img_inner fleft">';
+                    }else{
+                        echo '<img src="#" alt="'.$materia['titulo'].'" class="img_inner fleft">';
+                    }
                     ?>
-                <img src="<?php echo $dadosImagem['local'].$dadosImagem['nome'];?>" alt="<?php echo $materia['titulo']?>" class="img_inner fleft">
                     <div class="extra_wrapper">
                       <h4><a href="#"><?php echo $materia['titulo']?> </a></h4>
                       <time datetime="<?php echo $materia['dtInclusao']?>"><?php echo $materia['dtInclusao']?></time><?php echo $materia['descricao']?>
