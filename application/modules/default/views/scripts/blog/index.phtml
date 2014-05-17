@@ -27,7 +27,7 @@ $modeloImagem = new Admin_Model_Imagem();
                     ?>
                     <img src="<?php echo $dadosImagem['local'].$dadosImagem['nome'];?>" alt="<?php echo $materia['titulo']?>" class="img_inner fleft">
                     <div class="extra_wrapper">
-                      <h4><a href="#"><?php echo $materia['titulo']?> </a></h4>
+                      <h4><a href="<?php echo $this->url(array("controller"=>"blog","action"=>"show","id"=>$materia['idMateria']),null,true)?>"><?php echo $materia['titulo']?> </a></h4>
                       <time datetime="<?php echo $materia['dtInclusao']?>"><?php echo $materia['dtInclusao']?></time><?php echo $materia['descricao']?>
                       <br>
                       <a href="<?php echo $this->url(array("controller"=>"blog","action"=>"show","id"=>$materia['idMateria']),null,true)?>" class="link1">Veja Mais</a>
