@@ -14,7 +14,7 @@ function custom_echo($x)
 $modeloImagem = new Admin_Model_Imagem();
 ?>
 <div class="grid_12">
-      <h3>Our BLog</h3>      </div>
+      <h3>Blog</h3>      </div>
       <div class="grid_7">
           <?php
             foreach($this->materias as $key => $materia):
@@ -47,7 +47,7 @@ $modeloImagem = new Admin_Model_Imagem();
         <li><a href="#">Justo pretium dignissieger semper in estgue.</a></li>
         <li><a href="#"> In laoreet lacus eros, vel pulvinar urna ultut.</a></li>
       </ul>-->
-      <h4 class="head1">Recent Posts</h4>
+      <h4 class="head1">Postagens recentes</h4>
       <?php 
         foreach($this->materiasRecentes as $indice => $materia):
                 $dadosImagem = $modeloImagem->pesquisaImagem($materia['thumb']);
@@ -62,7 +62,7 @@ $modeloImagem = new Admin_Model_Imagem();
            <?php
         endforeach;
       ?>
-      <h4 class="head1">Recent Comments</h4>
+      <!-- <h4 class="head1">Recent Comments</h4>
       <div class="comm">
         <div class="user">
           <img src="images/page3_img7.jpg" alt="" class="img_inner fleft">
@@ -73,17 +73,7 @@ $modeloImagem = new Admin_Model_Imagem();
         </div>
         Maecenas vehicula egestas venenatis.  Fertolo milotti.
 Duis massa elit, auctor non pellentesque vel.
-      </div>
-      <div class="comm">
-        <div class="user">
-          <img src="images/page3_img7.jpg" alt="" class="img_inner fleft">
-          <div class="extra_wrapper">
-            <p><a href="#">Admin</a></p>
-            <time datetime="2013-01-01">September 14, 2013</time>
-          </div>
-        </div>
-        Neraecenas vehicula egestas venenatis. Fertolo milottiis massa elit, auctor non pellentesq.
-      </div>
+      </div> !-->
     </div>
   </div>
 </div>

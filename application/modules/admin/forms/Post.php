@@ -1,6 +1,6 @@
 <?php
 
-class Admin_Form_Post extends Zend_Form
+class Admin_Form_Post extends Twitter_Form
 {
 
     protected $exibir;

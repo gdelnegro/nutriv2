@@ -49,7 +49,7 @@ class Admin_BlogController extends Zend_Controller_Action
                 }
                 /*Adicionar dados no banco de dados*/
                 $dadosImagem =array(
-                    'descricao'  =>   'Logotipo'.$this->_getParam('sponsor'),
+                    'descricao'  =>   'Imagem materia'.$this->_getParam('titulo'),
                     'nome'      =>  'materia-'.$titulo.'.'.$extension,
                     'local'     =>  '/images/materias/',
                     'categoria' => '2'
